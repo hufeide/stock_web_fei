@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  title: HK Stock Alerts Proxy
+  version: 0.1.0
+paths:
+  /quote:
+    get:
+      summary: Get latest quote for one or more tickers
+      parameters:
+        - in: query
+          name: symbols
+          schema:
+            type: string
+          description: Comma-separated ticker symbols, e.g., 00700.HK,00001.HK
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        symbol:
+                          type: string
+                        latestPrice:
+                          type: number
+                        percentChange:
+                          type: number
+                        timestamp:
+                          type: string
+  /health:
+    get:
+      summary: Health and metrics
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  lastFetch:
+                    type: string
+                  fetchErrors:
+                    type: integer

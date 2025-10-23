@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HK Stock Alerts - MVP</title>
+  <link rel="stylesheet" href="/frontend/styles/main.css">
+</head>
+<body>
+  <div id="app">
+    <h1>HK Stock Alerts (MVP)</h1>
+    <div id="controls"></div>
+    <div id="status"></div>
+    <div id="list"></div>
+    <div id="alerts"></div>
+  </div>
+  <!-- Core libs and components (order matters) -->
+  <script src="/frontend/src/config.js"></script>
+  <script src="/frontend/src/storage.js"></script>
+  <script src="/frontend/src/fetcher.js"></script>
+  <script src="/frontend/src/observability.js"></script>
+  <script src="/frontend/src/sort.js"></script>
+  <script src="/frontend/src/ui.js"></script>
+  <!-- components -->
+  <script src="/frontend/src/components/listView.js"></script>
+  <script src="/frontend/src/components/alertEditor.js"></script>
+  <script src="/frontend/src/alertEngine.js"></script>
+  <script src="/frontend/src/alertHistory.js"></script>
+  <script src="/frontend/src/components/popup.js"></script>
+  <script src="/frontend/src/components/historyView.js"></script>
+  <script src="/frontend/src/components/settings.js"></script>
+  <script src="/frontend/src/components/watchlistManager.js"></script>
+  <!-- main bootstrap -->
+  <script src="/frontend/src/main.js"></script>
+</body>
+</html>
